@@ -1,0 +1,11 @@
+vim.cmd("set expandtab")
+vim.cmd("set tabstop=2")
+vim.cmd("set softtabstop=2")
+vim.cmd("set shiftwidth=2")
+vim.cmd("set number")
+vim.cmd("set relativenumber")
+vim.keymap.set('n', '<C-q>', '<CMD>copen<CR>', { noremap = true, silent = true })
+vim.keymap.set('v', '<C-c>', function()
+  vim.cmd('normal! "+y')
+end, { desc = "Copy to clipboard" })
+vim.g.mapleader = " "
