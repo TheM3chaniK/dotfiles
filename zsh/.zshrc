@@ -19,12 +19,21 @@ source $ZSH/oh-my-zsh.sh
 # Check archlinux plugin commands here
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/archlinux
 #
-export CAPITALIZED_USER=$(echo "$USER" | awk '{printf toupper(substr($0,1,1)); printf tolower(substr($0,2)); }')
+# Capitalize the username properly
+CAPITALIZED_USER="$(printf "%s%s" "$(echo "${USER:0:1}" | tr '[:lower:]' '[:upper:]')" "$(echo "${USER:1}" | tr '[:upper:]' '[:lower:]')")"
 
+# Define a reusable banner function
+print_banner() {
+    figlet "The $CAPITALIZED_USER" | lolcat
+    echo "Welcome back, Master" | lolcat
+}
 
-figlet "The $(echo "$CAPITALIZED_USER")" | lolcat
+# Print the banner now
+print_banner
 
-echo "Welcome back, Master" | lolcat
+# Override `clear` to clear + show banner again
+alias clear='command clear && print_banner'
+
 
 # Set-up icons for files/directories in terminal using lsd
 alias ls='lsd'
