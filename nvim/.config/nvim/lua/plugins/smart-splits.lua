@@ -17,10 +17,10 @@ return {
       vim.keymap.set("n", "<A-l>", require("smart-splits").resize_right)
 
       -- Horizontal split (new buffer)
-      vim.keymap.set("n", "<leader>\"", ":split<CR>", { desc = "Horizontal Split" })
+      vim.keymap.set("n", "<leader>-", ":split<CR>", { desc = "Horizontal Split" })
 
       -- Vertical split (new buffer)
-      vim.keymap.set("n", "<leader>%", ":vsplit<CR>", { desc = "Vertical Split" })
+      vim.keymap.set("n", "<leader><CR>", ":vsplit<CR>", { desc = "Vertical Split" })
 
       vim.keymap.set("n", "<leader>q", "<cmd>close<CR>", { desc = "Close current pane" })
 
