@@ -44,6 +44,11 @@ c.url.searchengines = {
 }
 
 
+# Custom Starte Page
+import os
+c.url.start_pages = f"file://{os.path.expanduser('~/.config/qutebrowser/startpage/index.html')}"
+
+
 # --- Load external theme ---
 import theme
 

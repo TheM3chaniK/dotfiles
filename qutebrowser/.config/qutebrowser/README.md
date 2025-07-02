@@ -71,7 +71,37 @@ Launch Qutebrowser with:
 qutebrowser
 ```
 
-Happy hacking with your keyboard-driven web! 🧩
+
+## Qutebrowser Custom Startpage with Local Username
+
+This setup lets you display a custom `Welcome ${USER}` greeting in your qutebrowser startpage **without leaking your real username** into your dotfiles repo.
+
+---
+
+### 📂 Directory Structure
+
+```plaintext
+~/.config/qutebrowser/startpage/
+ ├── index.html   # Tracked in git
+ ├── user.js      # Local only, .gitignore'd
+```
+---
+
+### ⚙️ How It Works
+* `index.html` is your main startpage, fully tracked in git.
+
+* It dynamically loads a `user.js` script if present.
+
+* `user.js` defines your local username in a simple localUser variable.
+
+* If `user.js` doesn’t exist, the page uses a default fallback like **"Hacker"**.
+
+### 🖊️ Example user.js
+```bash
+const localUser = "The M3chanik";
+```
+
+
 
 ## 🚫 Block Ads Like Brave
 
@@ -141,5 +171,4 @@ After editing, reload your config and update the filter lists directly from with
 You now have a clean, powerful browsing experience with robust ad and tracker blocking — all with Qutebrowser’s minimalist, keyboard-centric style.
 
 ---
-
-**Happy browsing!** 🚀
+**Happy hacking with your keyboard-driven web!** 🧩
