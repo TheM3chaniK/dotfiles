@@ -20,11 +20,13 @@ source $ZSH/oh-my-zsh.sh
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/archlinux
 #
 # Capitalize the username properly
-CAPITALIZED_USER="$(printf "%s%s" "$(echo "${USER:0:1}" | tr '[:lower:]' '[:upper:]')" "$(echo "${USER:1}" | tr '[:upper:]' '[:lower:]')")"
+
+export BANNER_USER="The $(printf "%s%s" "$(echo "${USER:0:1}" | tr '[:lower:]' '[:upper:]')" "$(echo "${USER:1}" | tr '[:upper:]' '[:lower:]')")"
+
 
 # Define a reusable banner function
 print_banner() {
-    figlet "The $CAPITALIZED_USER" | lolcat
+    figlet "$BANNER_USER" | lolcat
     echo "Welcome back, Master" | lolcat
 }
 

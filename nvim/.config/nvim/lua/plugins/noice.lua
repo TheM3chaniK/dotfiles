@@ -2,7 +2,16 @@ return {
   {
     "folke/noice.nvim",
     event = "VeryLazy",
-    dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
+    dependencies = { "MunifTanjim/nui.nvim", {
+      "rcarriga/nvim-notify",
+      opts = {
+        background_colour = "#000000",
+        timeout = 500,
+        render = "minimal",
+        stages = "fade",
+        fps = 60,
+      },
+    } },
     opts = {
       cmdline = {
         enabled = true,
@@ -31,8 +40,7 @@ return {
             width = "auto",
             height = "auto",
           },
-          win_options = {
-            winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+          win_options = { winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
           },
         },
         popupmenu = {
@@ -55,7 +63,7 @@ return {
         },
       },
       presets = {
-        bottom_search = false, -- keep command line popup floating
+        bottom_search = false,  -- keep command line popup floating
         command_palette = true, -- position search & cmd together
         long_message_to_split = true,
       },
