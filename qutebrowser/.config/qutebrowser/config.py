@@ -50,6 +50,23 @@ c.url.start_pages = f"file://{os.path.expanduser('~/.config/qutebrowser/startpag
 c.url.default_page = f"file://{os.path.expanduser('~/.config/qutebrowser/startpage/index.html')}"
 
 
+c.statusbar.show = "in-mode"
+
+# bookmark keybinds
+config.unbind("M")
+config.bind("sa", "bookmark-add")
+config.bind("sd", "bookmark-delete")
+config.unbind("Sq")
+config.bind("sq", "bookmark-list")
+
+# To Play yt video in mpv
+config.bind('M', 'spawn mpv --ytdl-format="bestvideo[height<=?1080]+bestaudio" {url}')
+
+
+# In your qutebrowser config.py:
+config.bind('yf', 'spawn firefox {url}')
+
+
 # --- Load external theme ---
 import theme
 
