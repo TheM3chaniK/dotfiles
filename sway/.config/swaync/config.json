@@ -1,0 +1,14 @@
+{
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-margin-top": 40,
+  "control-center-margin-bottom": 20,
+  "control-center-margin-right": 20,
+  "notification-visibility": "visible",
+  "control-center-visibility": "visible",
+  "widgets": ["notifications"],
+  "notification-icon-size": 32
+  "notification-timeout": 1500, 
+}
+

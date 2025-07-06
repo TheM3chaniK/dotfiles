@@ -244,6 +244,7 @@ bindsym $mod+r mode "resize"
 #     }
 # }
 
+exec_always pkkill swaync; swaync
 exec_always pkill waybar;waybar
 exec_always pkill nm-applet; nm-applet --indicator
 
