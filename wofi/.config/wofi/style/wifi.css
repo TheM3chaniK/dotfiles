@@ -1,0 +1,32 @@
+window {
+  background-color: rgba(15, 22, 30, 0.8);
+  border: 1px solid #00e0ff;
+  border-radius: 8px;
+  font-family: "JetBrains Mono", "IBM Plex Mono", "Space Mono", monospace;
+  font-size: 15px;
+  color: #f2f2f2;
+}
+
+#input {
+  border: none;
+  padding: 12px;
+  background: transparent;
+  color: #00e0ff;
+  font-weight: bold;
+}
+
+#entry {
+  padding: 10px 12px;
+  margin: 6px;
+  border-radius: 6px;
+}
+
+#entry:selected {
+  background-color: rgba(0, 224, 255, 0.15);
+  color: #00e0ff;
+}
+
+#scroll {
+  margin: 10px;
+}
+

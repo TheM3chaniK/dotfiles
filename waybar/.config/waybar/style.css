@@ -1,0 +1,127 @@
+window#waybar {
+  background: rgba(15, 22, 30, 0.9); 
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+  border-bottom: 1px solid rgba(0, 224, 255, 0.15);
+  color: #f2f2f2;
+  font-family: "JetBrains Mono", "IBM Plex Mono", "Space Mono", monospace;
+  font-size: 15px;
+}
+
+#custom-shutdown {
+  padding: 6px 12px;
+  margin: 0 6px;
+  margin-right: 10px;
+  border-radius: 6px;
+  background: transparent;
+  color: #ff0040;  /* hacker red */
+  font-size: 20px;
+}
+
+#custom-shutdown:hover {
+  background: rgba(255, 0, 64, 0.1);
+}
+
+/* Shared style for all modules */
+#custom-hostname,
+#clock,
+#pulseaudio,
+#cpu,
+#memory,
+#network,
+#battery,
+#tray #custom-bluetooth{
+  padding: 6px 12px;
+  margin: 0 6px;
+  border-radius: 6px;
+  background: transparent;
+  color: #00e0ff;
+  text-shadow: 0 0 8px #00e0ff;
+}
+
+#custom-bluetooth {
+  padding: 6px 12px;
+  margin: 0 6px;
+  border-radius: 6px;
+  color: #00e0ff;
+  text-shadow: 0 0 8px #00e0ff;
+}
+
+#custom-bluetooth.off {
+  color: #888;
+  text-shadow: none;
+}
+
+
+#battery.warning {
+  color: #ffae00;
+  text-shadow: 0 0 8px #ffae00;
+}
+#battery.critical {
+  color: #ff0033;
+  text-shadow: 0 0 8px #ff0033;
+}
+
+
+#tray > * {
+  margin: 0 4px;
+}
+
+/* Muted pulseaudio */
+#pulseaudio.muted {
+  color: #888;
+  text-shadow: none;
+}
+
+/* === Workspaces === */
+#workspaces {
+  margin: 0 6px;
+}
+
+#sway-workspaces button {
+  padding: 4px 10px;
+  margin: 0 4px;
+  border-radius: 6px;
+  background: transparent;
+  color: #cccccc;
+  border: 1px solid transparent;
+  transition: all 0.25s ease;
+}
+
+#sway-workspaces button.active {
+  background-color: rgba(0, 224, 255, 0.15);
+  border-color: rgba(0, 224, 255, 0.3);
+  color: #00e0ff;
+  text-shadow: 0 0 6px #00e0ff;
+}
+
+#sway-workspaces button:hover {
+  background-color: rgba(0, 224, 255, 0.05);
+  color: #00e0ff;
+}
+
+
+/* Tooltip theme */
+tooltip {
+  background: #011627;
+  color: #f2f2f2;
+  border: 1px solid #00e0ff;
+  border-radius: 4px;
+  padding: 4px 6px;
+}
+
+#custom-microphone {
+  padding: 6px 12px;
+  margin: 0 6px;
+  border-radius: 6px;
+  background: transparent;
+  color: #00e0ff;
+  text-shadow: 0 0 8px #00e0ff;
+  font-family: "JetBrainsMono Nerd Font","JetBrains Mono", "IBM Plex Mono", "Space Mono", monospace;
+}
+
+#custom-microphone.muted {
+  color: #888;
+  text-shadow: none;
+}
+

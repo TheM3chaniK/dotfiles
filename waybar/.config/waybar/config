@@ -1,0 +1,78 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 35,
+  "modules-left": ["custom/hostname", "clock"],
+  "modules-center": ["sway/workspaces"],
+  "modules-right": ["pulseaudio", "custom/microphone", "custom/bluetooth", "cpu", "memory", "tray", "battery", "custom/shutdown"],
+
+"custom/microphone": {
+  "exec": "~/.config/sway/scripts/microphone.sh",
+  "signal":10,
+  "on-click": "~/.config/sway/scripts/microphone.sh toggle",
+  "tooltip": false,
+  "return-type":"json",
+},
+
+"custom/bluetooth": {
+  "format": "",
+  "exec": "~/.config/sway/scripts/bt-status.sh",
+  "interval": 5,
+  "tooltip": false,
+  "on-click": "blueman-manager"
+},
+  "sway/workspaces": {
+  "format": "{name}",
+  "on-click": "activate",
+  "disable-scroll": true,
+  },
+
+  "custom/shutdown": {
+  "format": "⏻",
+  "tooltip": "Shutdown",
+  "on-click": "~/.config/sway/scripts/shutdown.sh"
+},
+
+
+  "battery": {
+  "states": {
+    "warning": 30,
+    "critical": 15
+  }
+},
+
+  "custom/hostname": {
+    "format": "󰣇 {}",
+    "exec": "echo $BANNER_USER",
+    "interval": 3600,
+    "tooltip": false
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": " Muted",
+    "format-icons": {
+      "default": ["", ""],
+      "headphones": ""
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "cpu": {
+    "format": " {usage}%",
+    "tooltip": true
+  },
+
+  "memory": {
+    "format": " {used:0.1f}G",
+    "tooltip": true
+  },
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip": true
+  }
+}
+
+
