@@ -78,3 +78,8 @@ eval "$(zoxide init zsh)"
 
 [ -f /usr/bin/zoxide ] && alias cd="z"
 
+
+export EDITOR=nvim
+# Cargo Path
+export PATH="$HOME/.cargo/bin:$PATH"
+
