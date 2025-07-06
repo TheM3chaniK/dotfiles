@@ -32,6 +32,7 @@ return {
       vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, { desc = "LSP go to implementation" })
       vim.keymap.set('n', '<leader>k', vim.lsp.buf.signature_help, { desc = "LSP Function Signature Help" })
       vim.keymap.set('n', '<leader>td', vim.lsp.buf.type_definition, { desc = "LSP Type definition" })
+      vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float)
     end,
   },
 }
