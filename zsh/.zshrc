@@ -39,8 +39,8 @@ alias clear='command clear && print_banner'
 
 # Set-up icons for files/directories in terminal using lsd
 alias ls='lsd'
-alias l='ls -la'
-alias la='ls -a'
+alias l='ls -lA'
+alias la='ls -A'
 alias ll='ls -l'
 alias lt='ls --tree'
 
