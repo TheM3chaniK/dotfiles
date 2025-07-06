@@ -76,6 +76,9 @@ exec_always autotiling
     # Start wallpaper picker 
     bindsym $mod+w exec $HOME/.config/sway/scripts/wallpaper-selector.sh
 
+    # For worldclock
+    bindsym $mod+t exec $HOME/.config/sway/scripts/worldclock.sh
+
     # Start a terminal
     bindsym $mod+Return exec $term
 
