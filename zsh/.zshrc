@@ -83,3 +83,10 @@ export EDITOR=nvim
 # Cargo Path
 export PATH="$HOME/.cargo/bin:$PATH"
 
+
+#alias for tmuxinator
+alias ti="tmuxinator"
+alias tis="tmuxinator start"
+alias tie="tmuxinator edit"
+alias tid="tmuxinator delete"
+alias tin="tmuxinator new"
