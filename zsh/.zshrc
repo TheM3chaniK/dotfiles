@@ -90,3 +90,11 @@ alias tis="tmuxinator start"
 alias tie="tmuxinator edit"
 alias tid="tmuxinator delete"
 alias tin="tmuxinator new"
+alias cat='bat'
+
+
+# screen_cast
+export XDG_CURRENT_DESKTOP=sway
+export XDG_SESSION_TYPE=wayland
+export XDG_SESSION_DESKTOP=sway
+
