@@ -1,66 +1,90 @@
 # 📂 My Dotfiles
 
-What's up my fellow hackers. This is my dotfile repo. Here you can find configs of my personal coding enviorments feel free to use it if you dont wanna make your own. But dont give any merge request as I wont gonna accept it. Have fun enjoy
+Welcome, fellow hackers! This repository contains my personal dotfiles for a complete and customized development environment. Feel free to use them, but please note that this is a personal setup, so review the scripts before running them.
 
-This repo uses [GNU Stow](https://www.gnu.org/software/stow/) for simple, modular symlink management.
-
----
-
-## 📦 Structure
-
-- **Root directory:** contains dotfiles and config folders for `$HOME` 
-- **`etc/`**: contains configs that belong under `/etc` 
-
-Each folder or config is a **stow package**.
+This setup is tailored for **Arch Linux** and uses `sway` as the window manager.
 
 ---
 
-## ⚡ Requirements
+## 🚀 Installation
 
-- **GNU Stow**
+The easiest way to get started is to use the `install.sh` script. It will install all the necessary packages, tools, and configurations.
 
-Install it:  
+### Prerequisites
+
+- An **Arch-based** Linux distribution.
+- `git` installed (`sudo pacman -S git`).
+
+### Steps
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/dotfiles.git
+    cd dotfiles
+    ```
+
+2.  **Run the installer:**
+    The script will ask for `sudo` permissions to install packages and set up system configurations.
+    ```bash
+    ./install.sh
+    ```
+
+---
+
+## ✨ What's Included?
+
+The installation script sets up a complete development environment with the following main components:
+
+-   **Window Manager:** `sway` (with `swayfx`, `swaylock-effects`, `waybar`, `wofi`, `swaync`)
+-   **Terminal:** `kitty`
+-   **Shell:** `zsh` with `oh-my-zsh`
+-   **Editor:** `neovim` (pre-configured)
+-   **Multiplexer:** `tmux` with TPM (Tmux Plugin Manager)
+-   **Tools:** `git`, `lazygit`, `fzf`, `ripgrep`, `fd`, `zoxide`, and many more.
+-   **System:** `keyd` for key remapping, `tlp` for power management, `pipewire` for audio.
+-   **Fonts:** JetBrains Mono Nerd Font and Noto Fonts.
+-   **Themes:** Catppuccin Mocha theme for GTK and other applications.
+
+The script also takes care of:
+-   Installing an AUR helper (`paru`).
+-   Setting up `nvm` for Node.js management.
+-   Optionally installing the Flutter SDK.
+-   Enabling necessary system services.
+
+---
+
+## 🗂️ Manual Management with Stow
+
+This repository uses [GNU Stow](https://www.gnu.org/software/stow/) for modular symlink management. If you prefer not to use the full installation script, you can symlink the configurations manually.
+
+### Requirements
+
+-   **GNU Stow:**
+    ```bash
+    sudo pacman -S stow
+    ```
+
+### Usage
+
+To link a configuration, use the `stow` command from within the `dotfiles` directory:
+
 ```bash
-sudo pacman -S stow   # Arch
-sudo apt install stow # Debian/Ubuntu
-```
-## 🗂️ How to use
+# Symlink the nvim config to ~/.config/nvim
+stow nvim
 
-### 1. Mannually
-you can use stow to symlink the dotfiles
-
-```bash
-stow -t <target_dir> <config_name>
-```
-
-**Example:**
-```bash
+# Symlink the keyd config to /etc/keyd
 sudo stow -t /etc etc/keyd
 ```
 
-```bash
-stow -t ~ nvim
-```
-### 2. Automatic
-There will be install.sh script soon to install the dotfiles automatically
-
----
-
-### 📌 Tips
-
-- Keep each config tidy — one logical config per folder.
-- To **unstow** (remove symlinks):
+To remove the symlinks:
 
 ```bash
-stow -D <package>
+stow -D nvim
+sudo stow -D -t /etc etc/keyd
 ```
-```bash
-sudo stow -D -t /etc etc/<package>
-```
-- Always check what will be linked before running with `sudo`.
 
 ---
 
 ### 🫧 License
 
-If you like my config clone it and use I wont mind
+If you like my config, clone it and use it. I won't mind.
