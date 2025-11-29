@@ -1,10 +1,10 @@
 window {
-  background-color: rgba(30, 42, 56, 0.9); /* glass dark + semi transparent */
+  background-color: #1e1e2e; /* glass dark + semi transparent */
   backdrop-filter: blur(10px);
   border: 1px solid rgba(200, 200, 200, 0.05);
   border-radius: 60px;
-  color: #00e0ff;
-  font-family: "JetBrains Mono", "IBM Plex Mono", "Space Mono", monospace;
+  color: #cdd6f4;
+  font-family: "JetBrainsMono Nerd Font Mono", "IBM Plex Mono", "Space Mono", monospace;
 }
 
 #input {
@@ -12,8 +12,8 @@ window {
   padding: 20px;
   background: transparent;
   border: none;
-  color: #00e0ff;
-  text-shadow: 0 0 8px #00e0ff;
+  color: #cdd6f4;
+  text-shadow: 0 0 8px #cdd6f4;
 }
 
 #outer-box {
@@ -29,13 +29,13 @@ window {
   padding: 18px 30px;
   margin: 8px 0;
   border-radius: 8px;
-  color: #00e0ff;
-  text-shadow: 0 0 8px #00e0ff;
+  color: #cdd6f4;
+  text-shadow: 0 0 8px #cdd6f4;
 }
 
 #entry:selected {
-  background-color: rgba(0, 224, 255, 0.1);
-  border: 1px solid rgba(0, 224, 255, 0.3);
-  text-shadow: 0 0 12px #00e0ff;
+  background-color: rgba(203, 166, 247, 0.1);
+  border: 1px solid rgba(203, 166, 247, 0.3);
+  text-shadow: 0 0 12px #cdd6f4;
 }
 

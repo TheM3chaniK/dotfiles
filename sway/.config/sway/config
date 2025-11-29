@@ -26,6 +26,7 @@ exec_always swww img ./wallpaper
 
 # autotiling 
 exec_always autotiling
+exec_always workstyle
 
 # exec_always output * bg -i ~/Pictures/wallpaperflare.com_wallpaper.jpg
 
@@ -42,10 +43,7 @@ exec_always autotiling
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
+exec swayidle -w before-sleep '$HOME/.config/sway/scripts/lock.sh'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -74,7 +72,7 @@ exec_always autotiling
 # Basics:
 #
     # Start wallpaper picker 
-    bindsym $mod+w exec $HOME/.config/sway/scripts/wallpaper-selector.sh
+    bindsym $mod+w exec waypaper
 
     # For worldclock
     bindsym $mod+t exec $HOME/.config/sway/scripts/worldclock.sh
@@ -82,16 +80,18 @@ exec_always autotiling
     # Start a terminal
     bindsym $mod+Return exec $term
 
-    # Start qutebrowser
 
-    bindsym $mod+b exec qutebrowser
-    bindsym $mod+e exec firefox
+    bindsym $mod+b exec firefox
+    bindsym $mod+e exec thunar
 
     # Kill focused window
     bindsym $mod+q kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
+
+    # Lock screen
+    bindsym $mod+Shift+Mod1+l exec $HOME/.config/sway/scripts/lock.sh
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -132,6 +132,7 @@ exec_always autotiling
 #
 # Workspaces:
 #
+    workspace_auto_back_and_forth yes
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -190,29 +191,18 @@ exec_always autotiling
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+u scratchpad show
 #
-# Resizing containers:
-#
-mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+# Resizing: 
+bindsym $mod+Alt+$right resize shrink width 10px
+bindsym $mod+Alt+$down resize grow height 10px
+bindsym $mod+Alt+$up resize shrink height 10px
+bindsym $mod+Alt+$left resize grow width 10px
 
-    # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+# Ditto, with arrow keys
+bindsym $mod+Alt+Right resize shrink width 10px
+bindsym $mod+Alt+Down resize grow height 10px
+bindsym $mod+Alt+Up resize shrink height 10px
+bindsym $mod+Alt+Left resize grow width 10px
 
-    # Return to default mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+r mode "resize"
 #
 # Utilities:
 #
@@ -228,7 +218,7 @@ bindsym $mod+r mode "resize"
     bindsym $mod+Shift+t exec $HOME/.config/sway/scripts/toogle-touchpad.sh
 
     # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    bindsym Print exec mkdir -p $HOME/Pictures/Screenshots && grim $HOME/Pictures/Screenshots/$(date +'%Y-%m-%d_%H-%M-%S').png && notify-send "Screenshot Captured" "Image saved to ~/Pictures/Screenshots"
 
 
 #
@@ -267,14 +257,26 @@ for_window [class=".*"] border pixel 2
 # === Rounded corners ===
 smart_corner_radius on
 corner_radius 10
+layer_effects "waybar" corner_radius 10
+layer_effects "waybar" shadows on
+layer_effects "wofi" corner_radius 60
+layer_effects "wofi" shadows on
 
-client.focused          #FF5555 #000000 #FFFFFF #FF0000 #FF5555
-client.focused_inactive #222222 #000000 #AAAAAA #333333 #222222
-client.unfocused        #111111 #000000 #555555 #222222 #111111
-client.urgent           #FF0000 #000000 #FFFFFF #FF0000 #FF0000
+shadows on
+shadow_blur_radius 8
+shadow_color #000000FF
+
+client.focused          #cba6f7 #1e1e2e #cdd6f4 #cba6f7 #cba6f7
+client.focused_inactive #585b70 #1e1e2e #cdd6f4 #585b70 #585b70
+client.unfocused        #313244 #1e1e2e #cdd6f4 #313244 #313244
+client.urgent           #f38ba8 #1e1e2e #cdd6f4 #f38ba8 #f38ba8
 
 # screen cast
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 
+# Floating windows for utility apps
+for_window [app_id="nm-connection-editor"] floating enable
+for_window [app_id="blueman-manager"] floating enable
+for_window [app_id="pavucontrol"] floating enable

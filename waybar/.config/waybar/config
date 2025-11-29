@@ -2,9 +2,9 @@
   "layer": "top",
   "position": "top",
   "height": 35,
-  "modules-left": ["custom/hostname", "clock"],
-  "modules-center": ["sway/workspaces"],
-  "modules-right": ["pulseaudio", "custom/microphone", "custom/bluetooth", "cpu", "memory", "tray", "battery", "custom/shutdown"],
+  "modules-left": ["sway/workspaces"],
+  "modules-center": ["custom/hostname"],
+  "modules-right": ["pulseaudio", "custom/microphone", "custom/bluetooth", "cpu", "memory", "network", "battery", "clock", "tray", "custom/shutdown"],
 
 "custom/microphone": {
   "exec": "~/.config/sway/scripts/microphone.sh",
@@ -29,6 +29,9 @@
 },
   "sway/workspaces": {
   "format": "{name}",
+  "format-icons": {
+    "default": "{name}"
+  },
   "on-click": "activate",
   "disable-scroll": true,
   },
@@ -72,6 +75,14 @@
   "memory": {
     "format": " {used:0.1f}G",
     "tooltip": true
+  },
+
+  "network": {
+    "format-wifi": "  {essid}",
+    "format-ethernet": "󰈀 {ifname}",
+    "format-disconnected": "󰖪 Disconnected",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "on-click": "nm-connection-editor"
   },
 
   "battery": {

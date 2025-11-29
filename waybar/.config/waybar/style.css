@@ -1,10 +1,10 @@
 window#waybar {
-  background: rgba(15, 22, 30, 0.9); 
+  background: #1e1e2e; 
   border-bottom-left-radius: 80px;
   border-bottom-right-radius: 80px;
-  border-bottom: 1px solid rgba(0, 224, 255, 0.15);
+  border-bottom: 1px solid #cba6f7;
   color: #f2f2f2;
-  font-family: "JetBrains Mono", "IBM Plex Mono", "Space Mono", monospace;
+  font-family: "JetBrainsMono Nerd Font Mono", "IBM Plex Mono", "Space Mono", monospace;
   font-size: 15px;
 }
 
@@ -35,16 +35,16 @@ window#waybar {
   margin: 0 6px;
   border-radius: 6px;
   background: transparent;
-  color: #00e0ff;
-  text-shadow: 0 0 8px #00e0ff;
+  color: #cdd6f4;
+  text-shadow: 0 0 8px #cdd6f4;
 }
 
 #custom-bluetooth {
   padding: 6px 12px;
   margin: 0 6px;
   border-radius: 6px;
-  color: #00e0ff;
-  text-shadow: 0 0 8px #00e0ff;
+  color: #cdd6f4;
+  text-shadow: 0 0 8px #cdd6f4;
 }
 
 #custom-bluetooth.off {
@@ -78,34 +78,29 @@ window#waybar {
   margin: 0 6px;
 }
 
-#sway-workspaces button {
+#workspaces button {
   padding: 4px 10px;
   margin: 0 4px;
   border-radius: 6px;
-  background: transparent;
-  color: #cccccc;
+  background: #313244;
+  color: #cdd6f4;
   border: 1px solid transparent;
   transition: all 0.25s ease;
 }
 
-#sway-workspaces button.active {
-  background-color: rgba(0, 224, 255, 0.15);
-  border-color: rgba(0, 224, 255, 0.3);
-  color: #00e0ff;
-  text-shadow: 0 0 6px #00e0ff;
-}
-
-#sway-workspaces button:hover {
-  background-color: rgba(0, 224, 255, 0.05);
-  color: #00e0ff;
+#workspaces button.active,
+#workspaces button:hover {
+  background: #cba6f7;
+  color: #1e1e2e;
+  text-shadow: none;
 }
 
 
 /* Tooltip theme */
 tooltip {
-  background: #011627;
+  background: #1e1e2e;
   color: #f2f2f2;
-  border: 1px solid #00e0ff;
+  border: 1px solid #cba6f7;
   border-radius: 4px;
   padding: 4px 6px;
 }
@@ -115,8 +110,8 @@ tooltip {
   margin: 0 6px;
   border-radius: 6px;
   background: transparent;
-  color: #00e0ff;
-  text-shadow: 0 0 8px #00e0ff;
+  color: #cdd6f4;
+  text-shadow: 0 0 8px #cdd6f4;
   font-family: "JetBrainsMono Nerd Font","JetBrains Mono", "IBM Plex Mono", "Space Mono", monospace;
 }
 

@@ -2,7 +2,7 @@ window {
   background-color: rgba(15, 22, 30, 0.8);
   border: 1px solid #00e0ff;
   border-radius: 8px;
-  font-family: "JetBrains Mono", "IBM Plex Mono", "Space Mono", monospace;
+  font-family: "JetBrainsMono Nerd Font Mono", "IBM Plex Mono", "Space Mono", monospace;
   font-size: 15px;
   color: #f2f2f2;
 }

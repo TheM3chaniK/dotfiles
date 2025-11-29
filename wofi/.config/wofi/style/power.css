@@ -1,8 +1,8 @@
 window {
   /* Fullscreen glass look */
-  background: rgba(30, 42, 56, 0.5);
-  color: #00e0ff;
-  font-family: "JetBrains Mono", "IBM Plex Mono", "Space Mono", monospace;
+  background: rgba(30, 30, 46, 0.5);
+  color: #cdd6f4;
+  font-family: "JetBrainsMono Nerd Font Mono", "IBM Plex Mono", "Space Mono", monospace;
 }
 
 #input {
@@ -21,18 +21,17 @@ window {
 #entry {
   font-size: 48px;
   padding: 40px;
-  color: #00e0ff;
-  text-shadow: 0 0 10px #00e0ff;
+  color: #cdd6f4;
+  text-shadow: 0 0 10px #cdd6f4;
   border-radius: 12px;
 }
 
 #entry:selected {
-  background: rgba(0, 224, 255, 0.1);
-  border: 1px solid rgba(0, 224, 255, 0.3);
-  text-shadow: 0 0 15px #00e0ff;
+  background: rgba(203, 166, 247, 0.1);
+  border: 1px solid rgba(203, 166, 247, 0.3);
+  text-shadow: 0 0 15px #cba6f7;
 }
 
 #entry:focus {
   outline: none;
 }
-

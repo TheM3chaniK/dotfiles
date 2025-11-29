@@ -1,7 +1,7 @@
 #!/bin/bash
 
-CHOICE=$(echo -e " [Shutdown]\n [Reboot]\n [Lock]\n [Logout]\n [Cancel]" | \
-  wofi --dmenu --width 100% --height 100% --prompt " " --style ~/.config/wofi/style/power.css)
+CHOICE=$(echo -e " [Shutdown]\n [Reboot]\n [Lock]\n [Logout]\n [Cancel]" | \
+  wofi --dmenu --prompt " " --style ~/.config/wofi/style/power.css)
 
 case "$CHOICE" in
   *\[Shutdown\]*)
@@ -11,7 +11,7 @@ case "$CHOICE" in
     systemctl reboot
     ;;
   *\[Lock\]*)
-    swaylock
+    $HOME/.config/sway/scripts/lock.sh
     ;;
   *\[Logout\]*)
     swaymsg exit

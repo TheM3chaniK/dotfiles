@@ -35,8 +35,8 @@ return {
       map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", opts)
 
       -- Move buffer positions
-      map("n", "<A-h>", "<cmd>BufferLineMovePrev<CR>", opts)
-      map("n", "<A-l>", "<cmd>BufferLineMoveNext<CR>", opts)
+      map("n", "<A-b>", "<cmd>BufferLineMovePrev<CR>", opts)
+      map("n", "<A-n>", "<cmd>BufferLineMoveNext<CR>", opts)
 
       -- Pick and close buffers
       map("n", "<leader>bp", "<cmd>BufferLinePick<CR>", opts)

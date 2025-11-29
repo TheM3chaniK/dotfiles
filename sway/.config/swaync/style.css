@@ -3,32 +3,31 @@
 }
 
 window {
-  background-color: rgba(1, 22, 39, 0.9);
-  border: 2px solid #00e0ff;
+  background-color: #1e1e2e; /* Base background, near `base` from Catppuccin Mocha */
+  border: 2px solid #cba6f7; /* Lavender for border, a common accent */
   border-radius: 10px;
-  color: #f2f2f2;
+  color: #cdd6f4; /* Text color, near `text` from Catppuccin Mocha */
   font-family: "JetBrains Mono", monospace;
 }
 
 .notification {
   margin: 10px;
   padding: 12px;
-  background-color: #3a4a5c;
-  border-left: 3px solid #00e0ff;
-  box-shadow: 0 0 10px #00e0ff;
+  background-color: #313244; /* Surface0 from Catppuccin Mocha */
+  border-left: 3px solid #b4befe; /* Sapphire for accent on notification */
+  box-shadow: 0 0 10px rgba(180, 190, 254, 0.5); /* Soft shadow with Sapphire */
 }
 
 .notification .summary {
   font-weight: bold;
-  color: #00e0ff;
+  color: #89b4fa; /* Blue for summary, good for important text */
 }
 
 .notification .body {
-  color: #f2f2f2;
+  color: #cdd6f4; /* Text color */
   margin-top: 4px;
 }
 
 .notification .time {
-  color: #ff3399;
+  color: #a6adc8; /* Subtext0 for time, less prominent */
 }
-
